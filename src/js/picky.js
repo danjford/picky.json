@@ -272,3 +272,18 @@ $(window).on('beforeunload', () => {
   localStorage.setItem('input', JSON.stringify($('textarea').val().length && main.get('data') ? input.get() : {}))
   localStorage.setItem('text', $('textarea').val())
 })
+
+$('.dropdown').on('click', function () {
+  $('.dropdown ul').slideToggle(300)
+})
+
+$('.dropdown li').on('click', function () {
+  // select theme
+  return false
+})
+
+$(document).on('click', function (el) {
+  if (!$(el.toElement).hasClass('dropdown')) {
+    $('.dropdown ul').slideUp(300)
+  }
+})

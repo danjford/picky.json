@@ -11,9 +11,39 @@
   outline: 0
   margin-top: 18px
   font-weight: 300
+  position: relative
   &:hover
     background: rgba(white, 5%)
   &:active
     background: rgba(#dc2430, 5%)
   @media (min-width: $tablet)
     margin-top: 26px
+  ~ .btn-example
+    margin-right: 5px
+
+.dropdown
+  .caret
+    font-size: 6px
+    position: relative
+    top: -2px
+    right: -5px
+  ul
+    position: absolute
+    margin-top: 5px
+    width: 100%
+    right: 0
+    border-bottom-left-radius: 3px
+    border-bottom-right-radius: 3px
+    box-shadow: 1px 2px 2px rgba(0,0,0,0.2)
+    z-index: 20
+    display: none
+    li
+      list-style-type: none
+      border-bottom: 1px solid #f2f2f2
+      background-color: white
+      color: #8C8C8C
+      text-align: right
+      padding: 5px 10px
+      trans()
+      &:hover
+        background-color: #f2f2f2

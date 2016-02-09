@@ -43,12 +43,10 @@ var formatSelected = function formatSelected(path) {
 
 // Format the JSON path so that it is valid for JS
 var unformatSelected = function unformatSelected(path) {
-
   var keypath = '';
   var splitPath = path.split('.');
 
-  for (var i = 0; i < splitPath.length; i++) {
-
+  for (var i = 0, ii = splitPath.length; i < ii; i++) {
     keypath += (splitPath[i].match(/(\d|\W)/g) ? '["' + splitPath[i] + '"]' : splitPath[i]) + '.';
   }
 
@@ -272,6 +270,21 @@ $('textarea').on('keyup change', function (e) {
 $(window).on('beforeunload', function () {
   localStorage.setItem('input', JSON.stringify($('textarea').val().length && main.get('data') ? input.get() : {}));
   localStorage.setItem('text', $('textarea').val());
+});
+
+$('.dropdown').on('click', function () {
+  $('.dropdown ul').slideToggle(300);
+});
+
+$('.dropdown li').on('click', function () {
+  // select theme
+  return false;
+});
+
+$(document).on('click', function (el) {
+  if (!$(el.toElement).hasClass('dropdown')) {
+    $('.dropdown ul').slideUp(300);
+  }
 });
 
 //# sourceMappingURL=picky.js.map
